@@ -5,4 +5,9 @@ package ddi.gobelins.mynotes.datas;
  */
 
 public class NoteManager {
+    private final Notes notes;
+
+    public NoteManager(Notes notes) {
+        this.notes = notes;
+    }
 }
