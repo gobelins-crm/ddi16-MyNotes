@@ -27,10 +27,11 @@ public class NoteManager {
 
     public void wipe() {
         notes.clear();
+        Note.deleteAll(Note.class);
     }
 
     public List<Note> fetchNoteList() {
-        notes = new ArrayList<>();
+        notes = Note.listAll(Note.class);
         return notes;
     }
 
@@ -40,5 +41,6 @@ public class NoteManager {
 
     private void addNote(Note note) {
         notes.add(note);
+        note.save();
     }
 }
