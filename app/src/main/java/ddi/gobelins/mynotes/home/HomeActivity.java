@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import ddi.gobelins.mynotes.R;
+import ddi.gobelins.mynotes.datas.NoteManager;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -20,12 +21,17 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final HomeListNotesFragment fragment = (HomeListNotesFragment) getSupportFragmentManager().findFragmentById(R.id.home_list_fragment);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                NoteManager.getInstance().addFakeNote();
+                fragment.refreshList();
             }
         });
     }

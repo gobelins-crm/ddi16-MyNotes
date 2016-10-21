@@ -3,4 +3,4 @@
     android:id="@+id/list_notes_recyclerview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ddi.gobelins.mynotes.home.HomeActivityFragment" />
+    tools:context="ddi.gobelins.mynotes.home.HomeListNotesFragment" />
